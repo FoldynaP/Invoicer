@@ -13,6 +13,7 @@ export default createStore({
     editInvoice: null,
     uid: null,
     navigationActive: null,
+    lightTheme: null,
   },
   mutations: {
     TOGGLE_INVOICE(state) {
@@ -46,7 +47,6 @@ export default createStore({
     },
     TOGGLE_EDIT_INVOICE (state) {
       state.editInvoice = !state.editInvoice;
-      console.log(state.editInvoice);
     },
     /*VYMAŽE POUZE FRONTEND, NE Z DATABÁZE*/
     DELETE_INVOICE (state, payload) {
@@ -68,6 +68,9 @@ export default createStore({
           invoice.invoiceDraft = false;
         }
       })
+    },
+    TOGGLE_LIGHT_THEME (state) {
+      state.lightTheme = !state.lightTheme;
     }
   },
   actions: {

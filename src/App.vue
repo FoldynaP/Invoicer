@@ -1,6 +1,6 @@
 <template>
  <div v-if="invoicesLoaded">
-   <div v-if="!mobile" class="app flex flex-column">
+   <div v-if="!mobile" class="app flex flex-column" :class="{light : lightTheme}">
       <Navigation v-if="$route.name !== 'Login' && $route.name !== 'Register'" />
       <div class="app-content flex-column">
         <Modal v-if="modalActive" />
@@ -71,7 +71,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(["invoiceModal", "modalActive", "invoicesLoaded"]),
+    ...mapState(["invoiceModal", "modalActive", "invoicesLoaded", "lightTheme"]),
   },
 };
 </script>
@@ -93,8 +93,12 @@ export default {
     flex-direction: row !important;
   }
 }
+.app.light {
+  background-color: #959fe9;
+}
 .app-content {
   padding: 0 20px;
+  margin-left: 110px;
   flex: 1;
   position: relative;
 }
@@ -121,6 +125,8 @@ export default {
 .invoice-leave-to {
   transform: translateX(-700px);
 }
+
+//inputs
 
 button,
 .button {

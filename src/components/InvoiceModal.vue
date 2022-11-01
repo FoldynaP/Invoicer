@@ -477,5 +477,8 @@ export default {
       outline: none;
     }
   }
+  input:-webkit-autofill {
+    background-color: #1e2139;
+  }
 }
 </style>

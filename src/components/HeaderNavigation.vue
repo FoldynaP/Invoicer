@@ -30,7 +30,6 @@ export default {
             }
 
         });
-        console.log
 
         const Logout = () => {
             firebase

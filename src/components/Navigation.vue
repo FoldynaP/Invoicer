@@ -31,7 +31,6 @@ import { mapState, mapMutations } from "vuex";
 export default {
     data() {
       return {
-        // navigationActive: true,
       }
     },
     name: "Navigation",
@@ -51,12 +50,12 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  position: absolute;
+  position: fixed;
   z-index: 99;
+  gap: 20px;
   flex-direction: row;
   background-color: #1e2139;
   cursor: pointer;
-  @media (min-width: 900px) {
     min-height: 100%;
     min-width: 90px;
     flex-direction: column;
@@ -72,23 +71,23 @@ header {
         transition: 0.3;
       }
     }
-  }
   .branding {
     border-radius: 0 20px 20px 0;
     background-color: #7c5dfa;
     justify-content: center;
     padding: 24px;
     cursor: pointer;
-    @media (min-width: 900px) {
-      width: 100%;
-    }
+    width: 100%;
+
     img {
       width: auto;
       height: 30px;
     }
   }
   .menu-list {
-    padding: 20px 15px;
+    a {
+      text-decoration: none;
+    }
     & ul {
       display: flex;
       flex-direction: column;
@@ -99,7 +98,7 @@ header {
       justify-content: center;
       align-items: center;
       gap: 10px;
-      padding: 12px 20px;
+      padding: 10px;
       border-radius: 25px;
       &:hover {
         background-color: #262a47;;
@@ -116,7 +115,9 @@ header {
       max-width: 0;
       overflow: hidden;
       transition: 0.3;
+      
     }
+
   }
 }
 </style>
