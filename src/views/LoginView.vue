@@ -63,12 +63,6 @@ export default {
             password,
         }
     },
-    components: {
-    },
-    methods: {
-    },
-    computed: {
-    }
 }
 </script>
 

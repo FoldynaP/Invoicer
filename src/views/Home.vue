@@ -1,5 +1,5 @@
 <template>
-  <div class="home" @click="checkClick" ref="filter">
+  <div class="home" @click="closeFilter" ref="filter">
     <HeaderNavigation/>
     <div class="container">
       <!-- Header -->
@@ -62,13 +62,17 @@ export default {
       search: "",
     };
   },
+  created() {
+    this.DELETE_INVOICE_DATA();
+    this.GET_INVOICES();
+  },
   components: {
     Invoice,
     HeaderNavigation,
   },
   methods: {
     ...mapActions(['GET_INVOICES']), 
-    ...mapMutations(["TOGGLE_INVOICE"]),
+    ...mapMutations(["TOGGLE_INVOICE", "DELETE_INVOICE_DATA"]),
 
     newInvoice() {
       this.TOGGLE_INVOICE();
@@ -87,8 +91,8 @@ export default {
       this.searchedInvoice = e.target.innerText;
       this.searchFilterMenu = null;
     },
-    checkClick(e) {
-      if (e.target === this.$refs.filter && this.filterMenu) {
+    closeFilter(e) {
+      if (e.target == this.$refs.filter && this.filterMenu) {
         this.toggleFilterMenu()
       }
     }

@@ -20,7 +20,7 @@ import 'firebase/compat/auth';
 export default {
     name: "HeaderNavigation",
 
-    setup() {
+    setup () {
         const name = ref("");
         
         onBeforeMount(() => {
